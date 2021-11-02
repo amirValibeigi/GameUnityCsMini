@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
 
     protected Joystick joystick;
+    protected JoyButton joyButton;
 
     Vector3 velocity;
 
@@ -24,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         joystick = FindObjectOfType<Joystick>();
+        joyButton = FindObjectOfType<JoyButton>();
     }
 
     // Update is called once per frame
@@ -32,11 +34,11 @@ public class PlayerMovement : MonoBehaviour
 
         bool isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
+
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
-
 
         float x = Input.GetAxis("Horizontal") + joystick.Horizontal;
         float z = Input.GetAxis("Vertical") + joystick.Vertical;
@@ -47,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(move * getSpeed(isGrounded) * Time.deltaTime);
 
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if ((joyButton.pressed || Input.GetButtonDown("Jump")) && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
