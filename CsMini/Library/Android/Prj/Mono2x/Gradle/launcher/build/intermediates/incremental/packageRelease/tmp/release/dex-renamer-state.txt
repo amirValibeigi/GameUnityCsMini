@@ -1,0 +1,4 @@
+#Mon Nov 01 14:38:08 IRST 2021
+base.0=E\:\\Project\\Unity\\CsMini\\CsMini\\Library\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

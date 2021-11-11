@@ -1,0 +1,57 @@
+{
+    "logs": [
+        {
+            "outputFile": "E:\\Project\\Unity\\CsMini\\CsMini\\Library\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "E:\\Project\\Unity\\CsMini\\CsMini\\Library\\Android\\Prj\\Mono2x\\Gradle\\launcher\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1",
+                        "startColumns": "-1,-1,-1",
+                        "startOffsets": "-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "5,7,10",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "219,319,457",
+                        "endLines": "6,9,13",
+                        "endColumns": "8,8,8",
+                        "endOffsets": "314,452,679"
+                    }
+                },
+                {
+                    "source": "E:\\Project\\Unity\\CsMini\\CsMini\\Library\\Android\\Prj\\Mono2x\\Gradle\\launcher\\src\\main\\res\\values\\ids.xml",
+                    "from": {
+                        "startLines": "-1",
+                        "startColumns": "-1",
+                        "startOffsets": "-1"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "45",
+                        "endOffsets": "96"
+                    }
+                },
+                {
+                    "source": "E:\\Project\\Unity\\CsMini\\CsMini\\Library\\Android\\Prj\\Mono2x\\Gradle\\launcher\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "2,-1",
+                        "startColumns": "2,-1",
+                        "startOffsets": "55,-1",
+                        "endColumns": "47,-1",
+                        "endOffsets": "100,-1"
+                    },
+                    "to": {
+                        "startLines": "3,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "101,151",
+                        "endColumns": "49,67",
+                        "endOffsets": "146,214"
+                    }
+                }
+            ]
+        }
+    ]
+}
