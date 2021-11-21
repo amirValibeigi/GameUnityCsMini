@@ -9,6 +9,7 @@ public class MouseLock : MonoBehaviour
     public float touchSensitivity = 800f;
 
     public Transform playerBody;
+    public Transform playerArms;
 
     float xRotation = 0f;
 
@@ -45,9 +46,10 @@ public class MouseLock : MonoBehaviour
 
 
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        xRotation = Mathf.Clamp(xRotation, -60f, 40f);
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        playerArms.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
         playerBody.Rotate(Vector3.up * mouseX);
 

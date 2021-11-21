@@ -7,29 +7,68 @@ public class PlayerMovement : MonoBehaviour
 
     public CharacterController controller;
 
+    [Header("Move Variables")]
     public float speed = 4f;
     public float slowSpeed = 2f;
     public float gravity = -12f;
-    public float jumpHeight = 1.8f;
+    public float jumpHeight = 0.8f;
 
+
+    [Header("Gravity")]
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
+
+    [Header("Buttons")]
     protected Joystick joystick;
     protected JoyButton joyButton;
 
+
+    [Header("Animations")]
+    private Animator animator;
+
+
     Vector3 velocity;
+    Vector3 move;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        joystick = FindObjectOfType<Joystick>();
-        joyButton = FindObjectOfType<JoyButton>();
+        getReferences();
     }
 
     // Update is called once per frame
     void Update()
+    {
+        movement();
+        handleAnimations();
+    }
+
+    private void getReferences()
+    {
+        joystick = FindObjectOfType<Joystick>();
+        joyButton = FindObjectOfType<JoyButton>();
+        animator = GetComponentInChildren<Animator>();
+    }
+
+
+    private void handleAnimations()
+    {
+        if (move == Vector3.zero)
+        {
+            animator.SetFloat("Speed", 0f);
+        }
+        else
+        {
+            animator.SetFloat("Speed", 1f);
+        }
+    }
+
+
+    private void movement()
     {
 
         bool isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -44,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical") + joystick.Vertical;
 
 
-        Vector3 move = transform.right * x + transform.forward * z;
+        move = transform.right * x + transform.forward * z;
 
         controller.Move(move * getSpeed(isGrounded) * Time.deltaTime);
 
@@ -59,6 +98,7 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
     }
+
 
     float getSpeed(bool isGrounded)
     {
