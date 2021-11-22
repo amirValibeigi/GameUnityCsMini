@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05dd46c261a6e4478b7d00124a465e1, type: 3}
+  m_Name: M24
+  m_EditorClassIdentifier: 
+  nameWeapon: M24
+  description: sniper
+  icon: {fileID: 21300000, guid: 780fd85ddaba5f047b3f65760fcb19f9, type: 3}
+  prefab: {fileID: 7802713104321392250, guid: 494c34fa45d17d944b386144e9f955e1, type: 3}
+  magazineSize: 6
+  magazineCount: 6
+  range: 100
+  weaponType: 4
+  weaponStyle: 0
