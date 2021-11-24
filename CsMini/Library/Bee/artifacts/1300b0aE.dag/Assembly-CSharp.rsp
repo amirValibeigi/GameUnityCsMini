@@ -339,6 +339,7 @@
 "Assets/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs"
 "Assets/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs"
 "Assets/src/Dust/Scripts/CharacterStats.cs"
+"Assets/src/Dust/Scripts/EquipmentManager.cs"
 "Assets/src/Dust/Scripts/Inventory.cs"
 "Assets/src/Dust/Scripts/Items/Item.cs"
 "Assets/src/Dust/Scripts/Items/ItemObject.cs"

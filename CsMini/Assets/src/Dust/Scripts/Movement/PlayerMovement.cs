@@ -59,11 +59,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (move == Vector3.zero)
         {
-            animator.SetFloat("Speed", 0f);
+            animator.SetFloat("speed", 0f);
         }
         else
         {
-            animator.SetFloat("Speed", 1f);
+            animator.SetFloat("speed", 1f);
         }
     }
 
