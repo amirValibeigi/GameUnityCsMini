@@ -660,7 +660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iconImage: {fileID: 485098316}
-  magazineText: {fileID: 2045810575}
+  storedAmmoText: {fileID: 2045810575}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1858,6 +1858,7 @@ GameObject:
   - component: {fileID: 1571300714}
   - component: {fileID: 1571300713}
   - component: {fileID: 1571300715}
+  - component: {fileID: 1571300716}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1997,8 +1998,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentlyEquippedWeapon: 2
   currentWeaponObject: {fileID: 0}
+  currentWeaponBarrel: {fileID: 0}
   WeaponHolderR: {fileID: 707457792}
   defaultMeleeWeapon: {fileID: 11400000, guid: 664fa70af351fa848b4c91735eae7b9f, type: 2}
+--- !u!114 &1571300716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571300707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d0208f00175268459c6aad4bd9fb5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canShoot: 1
+  primaryCurrentAmmo: 0
+  primaryCurrentAmmoStorage: 0
+  secondaryCurrentAmmo: 0
+  secondaryCurrentAmmoStorage: 0
+  primaryMagazineIsEmpty: 0
+  secondaryMagazineIsEmpty: 0
 --- !u!1 &1603333379
 GameObject:
   m_ObjectHideFlags: 0
@@ -2459,7 +2480,7 @@ GameObject:
   - component: {fileID: 2045810576}
   - component: {fileID: 2045810575}
   m_Layer: 5
-  m_Name: Magazine
+  m_Name: AmmoStoredText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

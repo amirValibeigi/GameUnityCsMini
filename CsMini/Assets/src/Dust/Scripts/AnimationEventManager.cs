@@ -23,8 +23,12 @@ public class AnimationEventManager : MonoBehaviour
     {
         Weapon weapon = inventory.getItem(equipmentManager.currentlyEquippedWeapon);
 
-        if (weapon != null)
-            equipmentManager.currentWeaponObject = Instantiate(weapon.prefab, equipmentManager.WeaponHolderR);
+        if (weapon == null)
+            return;
+
+        equipmentManager.currentWeaponObject = Instantiate(weapon.prefab, equipmentManager.WeaponHolderR);
+
+        equipmentManager.currentWeaponBarrel = equipmentManager.currentWeaponObject.transform.GetChild(0);
     }
 
 

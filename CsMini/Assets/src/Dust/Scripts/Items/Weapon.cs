@@ -7,9 +7,11 @@ public class Weapon : Item
 {
 
     public GameObject prefab;
+    public GameObject muzzleFlashParticles;
     public int magazineSize;
-    public int magazineCount;
+    public int storedAmmo;
     public float range;
+    public float fireRate;
     public WeaponType weaponType;
     public WeaponStyle weaponStyle;
 

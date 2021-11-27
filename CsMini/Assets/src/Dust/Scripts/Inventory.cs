@@ -8,8 +8,7 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     private Weapon[] weapons;
 
-    private PlayerHUD playerHUD;
-
+    private WeaponShooting weaponShooting;
 
     private void Start()
     {
@@ -20,9 +19,14 @@ public class Inventory : MonoBehaviour
 
     public void addItem(Weapon newItem)
     {
-        weapons[(int)newItem.weaponStyle] = newItem;
+        int newItemIndex = (int)newItem.weaponStyle;
+        if (weapons[newItemIndex] != null)
+        {
+            removeItem(newItemIndex);
+        }
 
-        playerHUD.updateWeaponUI(newItem);
+        weapons[newItemIndex] = newItem;
+        weaponShooting.initAmmo((int)newItem.weaponStyle, newItem);
     }
 
     public void removeItem(int index)
@@ -39,7 +43,7 @@ public class Inventory : MonoBehaviour
 
     private void getReferences()
     {
-        playerHUD = GetComponent<PlayerHUD>();
+        weaponShooting = GetComponent<WeaponShooting>();
     }
 
     private void initVarables()

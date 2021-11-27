@@ -4,6 +4,18 @@ ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
+      74: 6183211152343637703
+    second: Knife Idle
+  - first:
+      74: -8758666650909950819
+    second: Knife Walk
+  - first:
+      74: 5309218148627319138
+    second: Knife Down
+  - first:
+      74: 672113309968228781
+    second: Human FPS|Knife Down
+  - first:
       74: -652094680296111867
     second: Human FPS|Knife Dwon
   - first:
@@ -12,6 +24,9 @@ ModelImporter:
   - first:
       74: 6017673971273091657
     second: Human FPS|Knife Up
+  - first:
+      74: -1399349224458248458
+    second: Human FPS|Knife Up.001
   - first:
       74: 7782291708862475016
     second: Human FPS|Knife Walk
@@ -45,8 +60,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Human FPS|Knife Dwon
-      takeName: Human FPS|Knife Dwon
+      name: Human FPS|Knife Down
+      takeName: Human FPS|Knife Down
       internalID: 0
       firstFrame: 0
       lastFrame: 24
@@ -56,7 +71,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -69,7 +84,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.852459
+      - time: 0.8915094
         functionName: destroyWeapon
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -134,7 +149,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.10245901
+      - time: 0.1509434
         functionName: instantiateWeapon
         data: 
         objectReferenceParameter: {instanceID: 0}

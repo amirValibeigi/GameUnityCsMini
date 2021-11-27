@@ -17,6 +17,6 @@ public class PlayerHUD : MonoBehaviour
 
     public void updateWeaponUI(Weapon weapon)
     {
-        weaponUI.updateInfo(weapon.icon, weapon.magazineSize, weapon.magazineCount);
+        weaponUI.updateInfo(weapon.icon, weapon.magazineSize, weapon.storedAmmo);
     }
 }

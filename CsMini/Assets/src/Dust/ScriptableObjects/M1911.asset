@@ -16,8 +16,10 @@ MonoBehaviour:
   description: test
   icon: {fileID: 21300000, guid: e60ad5852da353343b22c3e7ea0e45a0, type: 3}
   prefab: {fileID: 2401171962533840656, guid: 808ee8a4b89d8e74eb8d2c815c187f0a, type: 3}
+  muzzleFlashParticles: {fileID: 3943658827334547532, guid: 216b1c08a8b68a74199aba8995bfcbdf, type: 3}
   magazineSize: 12
-  magazineCount: 4
+  storedAmmo: 72
   range: 75
+  fireRate: 0.3
   weaponType: 1
   weaponStyle: 1
