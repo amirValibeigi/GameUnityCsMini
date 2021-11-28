@@ -9,9 +9,15 @@ public class WeaponUI : MonoBehaviour
     [SerializeField] private Text storedAmmoText;
 
 
-    public void updateInfo(Sprite weaponIcon, int magazineSize, int storedAmmo)
+    public void updateInfo(Sprite weaponIcon, int currentAmmo, int storedAmmo)
     {
         iconImage.sprite = weaponIcon;
-        storedAmmoText.text = magazineSize.ToString() + "/" + storedAmmo.ToString();
+        updateAmmoUI(currentAmmo, storedAmmo);
+    }
+
+    public void updateAmmoUI(int currentAmmo, int storedAmmo)
+    {
+
+        storedAmmoText.text = currentAmmo.ToString() + "/" + storedAmmo.ToString();
     }
 }

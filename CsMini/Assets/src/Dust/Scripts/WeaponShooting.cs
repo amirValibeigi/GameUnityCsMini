@@ -17,10 +17,13 @@ public class WeaponShooting : MonoBehaviour
 
     [SerializeField] private bool primaryMagazineIsEmpty = false;
     [SerializeField] private bool secondaryMagazineIsEmpty = false;
+    public bool canReload = true;
 
     private Camera cam;
     private Inventory inventory;
     private EquipmentManager manager;
+    private Animator playerAnimator;
+    private PlayerHUD playerHUD;
 
     private void Start()
     {
@@ -66,7 +69,7 @@ public class WeaponShooting : MonoBehaviour
         canShoot = !((slot == 0 && primaryMagazineIsEmpty) || (slot == 1 && secondaryMagazineIsEmpty));
 
 
-        if (canShoot)
+        if (canShoot && canReload)
         {
 
 
@@ -76,9 +79,6 @@ public class WeaponShooting : MonoBehaviour
                 RaycastShoot(currentWeapon);
                 useAmmo(slot, 1, 0);
             }
-        }
-        else
-        {
         }
 
     }
@@ -105,6 +105,7 @@ public class WeaponShooting : MonoBehaviour
                 reload(slot);
             }
         }
+        updateAmmo(slot);
     }
 
 
@@ -118,36 +119,42 @@ public class WeaponShooting : MonoBehaviour
         int magazineSize = weapon.magazineSize;
         if (slot == 0)
         {
-            if (primaryCurrentAmmo != magazineSize && (primaryCurrentAmmo >= 0 && primaryCurrentAmmoStorage > 0))
-            {
-                int subAmmo = Mathf.Min(magazineSize, primaryCurrentAmmoStorage);
+            if (!((primaryCurrentAmmo != magazineSize) && (primaryCurrentAmmo >= 0 && primaryCurrentAmmoStorage > 0)))
+                return;
+
+            int subAmmo = Mathf.Min(magazineSize, primaryCurrentAmmoStorage);
 
 
-                primaryCurrentAmmoStorage = Mathf.Max(primaryCurrentAmmoStorage - (magazineSize - primaryCurrentAmmo), 0);
+            primaryCurrentAmmoStorage = Mathf.Max(primaryCurrentAmmoStorage - (magazineSize - primaryCurrentAmmo), 0);
 
-                primaryCurrentAmmo = subAmmo;
+            primaryCurrentAmmo = subAmmo;
 
-                primaryMagazineIsEmpty = false;
-            }
+            primaryMagazineIsEmpty = false;
         }
         else if (slot == 1)
         {
-            if (secondaryCurrentAmmo != magazineSize && (secondaryCurrentAmmo >= 0 && secondaryCurrentAmmoStorage > 0))
-            {
-                int subAmmo = Mathf.Min(magazineSize, secondaryCurrentAmmoStorage + secondaryCurrentAmmo);
+            if (!((secondaryCurrentAmmo != magazineSize) && (secondaryCurrentAmmo >= 0 && secondaryCurrentAmmoStorage > 0)))
+                return;
 
-                secondaryCurrentAmmoStorage = Mathf.Max(secondaryCurrentAmmoStorage - (magazineSize - secondaryCurrentAmmo), 0);
+            int subAmmo = Mathf.Min(magazineSize, secondaryCurrentAmmoStorage + secondaryCurrentAmmo);
 
-                secondaryCurrentAmmo = subAmmo;
+            secondaryCurrentAmmoStorage = Mathf.Max(secondaryCurrentAmmoStorage - (magazineSize - secondaryCurrentAmmo), 0);
 
-                secondaryMagazineIsEmpty = false;
-            }
+            secondaryCurrentAmmo = subAmmo;
+
+            secondaryMagazineIsEmpty = false;
         }
+        playerAnimator.SetTrigger("reload");
+        manager.currentWeaponAnimator.SetTrigger("reload");
+        updateAmmo(slot);
     }
 
 
     public void initAmmo(int slot, Weapon weapon)
     {
+        if (!canReload)
+            return;
+
         if (slot == 0)
         {
             primaryCurrentAmmo = weapon.magazineSize;
@@ -160,10 +167,31 @@ public class WeaponShooting : MonoBehaviour
         }
     }
 
+
+    private void updateAmmo(int slot)
+    {
+        int tmp1 = 0, tmp2 = 0;
+
+        if (slot == 0)
+        {
+            tmp1 = primaryCurrentAmmo;
+            tmp2 = primaryCurrentAmmoStorage;
+        }
+        else if (slot == 1)
+        {
+            tmp1 = secondaryCurrentAmmo;
+            tmp2 = secondaryCurrentAmmoStorage;
+        }
+
+        playerHUD.updateAmmoUI(tmp1, tmp2);
+    }
+
     private void getReferences()
     {
         cam = GetComponentInChildren<Camera>();
         inventory = GetComponent<Inventory>();
         manager = GetComponent<EquipmentManager>();
+        playerAnimator = GetComponentInChildren<Animator>();
+        playerHUD = GetComponent<PlayerHUD>();
     }
 }
