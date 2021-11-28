@@ -338,6 +338,7 @@
 "Assets/Joystick Pack/Scripts/Joysticks/FixedJoystick.cs"
 "Assets/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs"
 "Assets/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs"
+"Assets/src/Dust/Scripts/AnimationEventManager.cs"
 "Assets/src/Dust/Scripts/CharacterStats.cs"
 "Assets/src/Dust/Scripts/EquipmentManager.cs"
 "Assets/src/Dust/Scripts/Inventory.cs"
@@ -352,6 +353,7 @@
 "Assets/src/Dust/Scripts/PlayerState.cs"
 "Assets/src/Dust/Scripts/UI/PlayerHUD.cs"
 "Assets/src/Dust/Scripts/UI/WeaponUI.cs"
+"Assets/src/Dust/Scripts/WeaponShooting.cs"
 -langversion:9.0
 
 /deterministic

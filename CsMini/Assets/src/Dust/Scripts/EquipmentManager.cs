@@ -4,48 +4,74 @@ using UnityEngine;
 
 public class EquipmentManager : MonoBehaviour
 {
-    private Animator animator;
+    public int currentlyEquippedWeapon = 2;
+    public GameObject currentWeaponObject = null;
+    public Transform currentWeaponBarrel = null;
+    public Transform WeaponHolderR;
+    [SerializeField] Weapon defaultMeleeWeapon = null;
+    private Animator playerAnimator;
+    public Animator currentWeaponAnimator;
     private Inventory inventory;
+    private PlayerHUD playerHUD;
 
-    private void Strart()
+    private void Start()
     {
         getReferences();
+        //StartCoroutine(initVariables());
     }
-
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+
+        if (Input.GetKeyDown(KeyCode.Alpha1) && currentlyEquippedWeapon != 0)
         {
-            setWeaponAnimations(0, WeaponType.AR);
-            setWeaponAnimations(0, WeaponType.Shotgun);
-            setWeaponAnimations(0, WeaponType.Sniper);
+            unequipWeapon();
+            equipWeapon(inventory.getItem(0));
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2) && currentlyEquippedWeapon != 1)
         {
-            setWeaponAnimations(1, WeaponType.Pistol);
+            unequipWeapon();
+            equipWeapon(inventory.getItem(1));
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3) && currentlyEquippedWeapon != 2)
         {
-            setWeaponAnimations(2, WeaponType.Melee);
+            unequipWeapon();
+            equipWeapon(inventory.getItem(2));
         }
     }
 
-    private void setWeaponAnimations(int weaponStyle, WeaponType weaponType)
+
+    private void equipWeapon(Weapon weapon)
     {
-        Weapon weapon = inventory.getItem(weaponStyle);
+        if (weapon == null)
+            return;
 
-        if (weapon != null && weapon.weaponType == weaponType)
-        {
-            animator.SetInteger("weaponType", (int)weaponType);
-        }
+        currentlyEquippedWeapon = (int)weapon.weaponStyle;
+        playerAnimator.SetInteger("weaponType", (int)weapon.weaponType);
+        playerHUD.updateWeaponUI(weapon);
     }
 
+
+    private void unequipWeapon()
+    {
+        playerAnimator.SetTrigger("unequipWeapon");
+    }
+
+
+    private IEnumerator initVariables()
+    {
+        yield return new WaitForSeconds(2);
+
+        inventory.addItem(defaultMeleeWeapon);
+        unequipWeapon();
+        equipWeapon(inventory.getItem(2));
+    }
     private void getReferences()
     {
-        animator = GetComponentInChildren<Animator>();
+        playerAnimator = GetComponentInChildren<Animator>();
         inventory = GetComponent<Inventory>();
+        playerHUD = GetComponent<PlayerHUD>();
     }
 }

@@ -19,5 +19,6 @@ MonoBehaviour:
   magazineSize: 0
   magazineCount: 0
   range: 5
+  fireRate: 1
   weaponType: 0
   weaponStyle: 2
