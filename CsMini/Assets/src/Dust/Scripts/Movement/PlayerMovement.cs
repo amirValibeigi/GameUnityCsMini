@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Buttons")]
     protected Joystick joystick;
-    protected JoyButton joyButton;
+    protected JumpButton jumpButton;
 
 
     [Header("Animations")]
@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
     private void getReferences()
     {
         joystick = FindObjectOfType<Joystick>();
-        joyButton = FindObjectOfType<JoyButton>();
+        jumpButton = FindObjectOfType<JumpButton>();
         animator = GetComponentInChildren<Animator>();
     }
 
@@ -88,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(move * getSpeed(isGrounded) * Time.deltaTime);
 
 
-        if ((joyButton.pressed || Input.GetButtonDown("Jump")) && isGrounded)
+        if ((jumpButton.pressed || Input.GetButtonDown("Jump")) && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
