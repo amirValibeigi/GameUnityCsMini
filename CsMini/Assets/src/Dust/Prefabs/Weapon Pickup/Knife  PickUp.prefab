@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 700996723806350147}
   - component: {fileID: 1051939294373052337}
   - component: {fileID: -6636057944582954399}
+  - component: {fileID: -7872322542982373201}
   m_Layer: 7
   m_Name: Knife  PickUp
   m_TagString: Untagged
@@ -114,6 +115,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 664fa70af351fa848b4c91735eae7b9f, type: 2}
+--- !u!54 &-7872322542982373201
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4552149426282438276}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5300328542986988785
 GameObject:
   m_ObjectHideFlags: 0

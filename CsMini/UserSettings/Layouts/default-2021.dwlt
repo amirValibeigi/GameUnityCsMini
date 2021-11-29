@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 76
+  controlID: 117
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 64
+  controlID: 54
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 65
+  controlID: 55
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 66
+  controlID: 56
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -320,8 +320,8 @@ MonoBehaviour:
     y: 0
     width: 396
     height: 807
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -752,9 +752,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ec4c0000
-      m_LastClickedID: 19692
-      m_ExpandedIDs: cce9fdff12edfdff20f2fdff400cfeff9a13feff2a1afeff6af9ffff6ef9ffff72f9ffffd2f9ffffd6f9fffff0f9ffff8a4c0000cc4c0000d64c0000fc4c00005e4d0000664d0000
+      m_SelectedIDs: fa4b0000
+      m_LastClickedID: 19450
+      m_ExpandedIDs: 90f7ffff70f9ffff2afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1003,9 +1003,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -3.0717816, y: -0.6458442, z: -0.8997247}
+    m_Target: {x: 14.667059, y: 3.3177845, z: 24.917393}
     speed: 2
-    m_Value: {x: -3.0717816, y: -0.6458442, z: -0.8997247}
+    m_Value: {x: 14.667059, y: 3.3177845, z: 24.917393}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1052,13 +1052,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.035034142, y: -0.9500723, z: 0.28765732, w: 0.11571061}
+    m_Target: {x: 0.09826392, y: 0.6358756, z: -0.08209659, w: 0.7610959}
     speed: 2
-    m_Value: {x: 0.035034135, y: -0.95007205, z: 0.28765726, w: 0.11571058}
+    m_Value: {x: 0.098263904, y: 0.6358755, z: -0.082096584, w: 0.76109576}
   m_Size:
-    m_Target: 1.2608219
+    m_Target: 4.738711
     speed: 2
-    m_Value: 1.2608219
+    m_Value: 4.738711
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1124,22 +1124,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/src/Dust/objs/Animations/Player
+    - Assets/src/Dust/Prefabs/Weapon Pickup
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/src/Dust/objs/Animations/Player
+  - Assets/src/Dust/Prefabs/Weapon Pickup
   m_LastFoldersGridSize: 16
   m_LastProjectPath: E:\Project\Unity\CsMini\CsMini
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 146}
-    m_SelectedIDs: f4580000
-    m_LastClickedID: 22772
-    m_ExpandedIDs: 000000007e52000080520000825200008452000086520000885200008a5200008c5200008e520000905200005e58000000ca9a3b
+    scrollPos: {x: 0, y: 206}
+    m_SelectedIDs: fc510000
+    m_LastClickedID: 20988
+    m_ExpandedIDs: 00000000be510000c0510000c2510000c4510000c6510000c8510000ca510000cc510000ce510000d0510000f651000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1167,7 +1167,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000007e52000080520000825200008452000086520000885200008a5200008c5200008e52000090520000
+    m_ExpandedIDs: 00000000be510000c0510000c2510000c4510000c6510000c8510000ca510000cc510000ce510000d0510000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1198,18 +1198,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c62300003253000000000000e851000050510000c0520000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: M24
-      m_OriginalName: M24
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 20554
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 12}
     m_CreateAssetUtility:
@@ -1282,7 +1282,7 @@ MonoBehaviour:
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 
   m_PreviewResizer:
-    m_CachedPref: 232
+    m_CachedPref: -232
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
