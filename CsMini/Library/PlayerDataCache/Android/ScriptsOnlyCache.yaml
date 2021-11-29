@@ -1,13 +1,35 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AnimationEventManager
+    - AttackButton
+    - EquipmentManager
     - FixedJoystick
-    - JoyButton
+    - Inventory
+    - ItemObject
+    - JumpButton
     - MouseLock
     - MoveCameraHandler
+    - PickupButton
+    - PlayerHUD
     - PlayerMovement
+    - PlayerPickup
+    - PlayerState
+    - ReloadButton
+    - TimerGame
+    - Weapon
+    - WeaponShooting
+    - WeaponUI
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -15,11 +37,13 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/src/Dust/sences/DustII.unity:
+    Assets/Scenes/DustIIScenes.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -38,11 +62,23 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
     - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 74
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 89
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -51,30 +87,70 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1522}
     - Class: 114
-      Script: {instanceID: 2014}
+      Script: {instanceID: 1668}
     - Class: 114
-      Script: {instanceID: 2382}
+      Script: {instanceID: 1944}
     - Class: 114
-      Script: {instanceID: 2494}
+      Script: {instanceID: 2018}
     - Class: 114
-      Script: {instanceID: 2528}
+      Script: {instanceID: 2094}
     - Class: 114
-      Script: {instanceID: 2660}
+      Script: {instanceID: 2386}
     - Class: 114
-      Script: {instanceID: 2846}
+      Script: {instanceID: 2498}
     - Class: 114
-      Script: {instanceID: 2920}
+      Script: {instanceID: 2532}
     - Class: 114
-      Script: {instanceID: 30808}
+      Script: {instanceID: 2664}
     - Class: 114
-      Script: {instanceID: 32072}
+      Script: {instanceID: 2850}
+    - Class: 114
+      Script: {instanceID: 2878}
+    - Class: 114
+      Script: {instanceID: 2926}
+    - Class: 114
+      Script: {instanceID: 2938}
+    - Class: 114
+      Script: {instanceID: 3036}
+    - Class: 114
+      Script: {instanceID: 3292}
+    - Class: 114
+      Script: {instanceID: 3348}
+    - Class: 114
+      Script: {instanceID: 3366}
+    - Class: 114
+      Script: {instanceID: 3598}
+    - Class: 114
+      Script: {instanceID: 3824}
+    - Class: 114
+      Script: {instanceID: 4000}
+    - Class: 114
+      Script: {instanceID: 4466}
+    - Class: 114
+      Script: {instanceID: 50908}
+    - Class: 114
+      Script: {instanceID: 50910}
+    - Class: 114
+      Script: {instanceID: 50912}
+    - Class: 114
+      Script: {instanceID: 50918}
+    - Class: 114
+      Script: {instanceID: 92466}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 137
       Script: {instanceID: 0}
     - Class: 143
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -129,6 +205,12 @@ ScriptsOnlyBuild:
     className: Toggle
   - hash:
       serializedVersion: 2
+      Hash: fd7c69e3cca0e60e64c000658ec43c9e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Inventory
+  - hash:
+      serializedVersion: 2
       Hash: 0dbc3be398b4869a5c8d0d8481ee402c
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -169,6 +251,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_FontAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 85b68eba4538e50f9f9d7065a66295e0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: WeaponUI
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -255,7 +343,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 4764ed288a7e931ce2840fbcd96e7f15
+      Hash: a6b6cfee0205b608fa5b897f998c7048
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MouseLock
@@ -333,6 +421,12 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
+      Hash: 17e54309cf4e59bdfdbbb8d16c59b752
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ItemObject
+  - hash:
+      serializedVersion: 2
       Hash: 8e6ceabfd38a184413d69b7db56c89cc
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
@@ -361,6 +455,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AnimationEventManager
   - hash:
       serializedVersion: 2
       Hash: 8aa3d6ccbcb54ee8db6c1229854adaaa
@@ -399,6 +499,12 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
+      Hash: 67e6dfc1b0fc3835b347cd7e9bcad4fb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerPickup
+  - hash:
+      serializedVersion: 2
       Hash: 18c222bef9ae745ce69ddde9b74337ca
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -423,10 +529,22 @@ ScriptsOnlyBuild:
     className: AnimationTrack
   - hash:
       serializedVersion: 2
+      Hash: 02b8a1b18a1efcc4933b443c2dd81606
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerState
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: PositionAsUV1
+  - hash:
+      serializedVersion: 2
+      Hash: 2023c7f8ca3d376fd2afe7d819a65645
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Weapon
   - hash:
       serializedVersion: 2
       Hash: 87ff43d2baf3385cba327d8f803a4ebb
@@ -459,6 +577,12 @@ ScriptsOnlyBuild:
     className: Dropdown
   - hash:
       serializedVersion: 2
+      Hash: 3bafb3ed40b7a20eb272d56dff446c75
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Item
+  - hash:
+      serializedVersion: 2
       Hash: a5781dc71a671b1ad2b38de19f24b71f
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -469,6 +593,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalTrack
+  - hash:
+      serializedVersion: 2
+      Hash: aaf31f9bc7f70d4ac6abbdf9c796c7ba
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EquipmentManager
   - hash:
       serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
@@ -501,6 +631,12 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
+      Hash: 7d58f14655a3f71a0d74257749f87eb4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerHUD
+  - hash:
+      serializedVersion: 2
       Hash: 18c222bef9ae745ce69ddde9b74337ca
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -531,10 +667,28 @@ ScriptsOnlyBuild:
     className: JoystickPlayerExample
   - hash:
       serializedVersion: 2
+      Hash: 213150b0752305e09d5de0408269ae6e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: WeaponShooting
+  - hash:
+      serializedVersion: 2
+      Hash: 400574be6b0c3414a9912341827de045
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: JoyButton
+  - hash:
+      serializedVersion: 2
       Hash: 6980e81ddc615a861309d2d659cc3760
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SubMeshUI
+  - hash:
+      serializedVersion: 2
+      Hash: 02b8a1b18a1efcc4933b443c2dd81606
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CharacterStats
   - hash:
       serializedVersion: 2
       Hash: fd68d84f33fad85aac38f2739c0ee270
@@ -553,6 +707,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalEmitter
+  - hash:
+      serializedVersion: 2
+      Hash: 4bb083d0aeec9b3c7974a545e7442e8f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MoveCameraHandler
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -576,14 +736,32 @@ ScriptsOnlyBuild:
       Hash: 400574be6b0c3414a9912341827de045
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: JoyButton
+    className: AttackButton
   - hash:
       serializedVersion: 2
-      Hash: 4bb083d0aeec9b3c7974a545e7442e8f
+      Hash: 400574be6b0c3414a9912341827de045
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: MoveCameraHandler
+    className: PickupButton
+  - hash:
+      serializedVersion: 2
+      Hash: 400574be6b0c3414a9912341827de045
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: JumpButton
+  - hash:
+      serializedVersion: 2
+      Hash: 400574be6b0c3414a9912341827de045
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ReloadButton
+  - hash:
+      serializedVersion: 2
+      Hash: d1721d4ff03862128874f82f0d48b70f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TimerGame
   platform: 13
   scenePathNames:
-  - Assets/Scenes/src/Dust/sences/DustII.unity
+  - Assets/Scenes/DustIIScenes.unity
   playerPath: E:/Project/Unity/CsMini/Build/DustII.apk
