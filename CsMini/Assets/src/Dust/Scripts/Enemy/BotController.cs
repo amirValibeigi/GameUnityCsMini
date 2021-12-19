@@ -6,30 +6,44 @@ using UnityEngine.AI;
 public class BotController : MonoBehaviour
 {
     private NavMeshAgent agent = null;
-    [SerializeField]private Transform target;
+    private Animator animator;
+    [SerializeField] private Transform target;
 
-    private void Start(){
+    private void Start()
+    {
         getReferences();
     }
 
-    private void Update(){
+    private void Update()
+    {
         moveToTarget();
     }
 
-    private void moveToTarget(){
+    private void moveToTarget()
+    {
         agent.SetDestination(target.position);
+        animator.SetFloat("Speed", 1f, 0.3f, Time.deltaTime);
 
         rotateToTarget();
+
+        if (agent.isStopped)
+        {
+            animator.SetFloat("Speed", 0f);
+        }
+
     }
 
-    private void rotateToTarget(){
+    private void rotateToTarget()
+    {
         Vector3 direction = target.position - transform.position;
-        Quaternion rotation = Quaternion.LookRotation(direction,Vector3.up);
+        Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
         transform.rotation = rotation;
     }
 
-    private void getReferences(){
+    private void getReferences()
+    {
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>();
     }
-    
+
 }
