@@ -30,7 +30,7 @@ public class CharacterStats : MonoBehaviour
         }
     }
 
-    public void die()
+    public virtual void die()
     {
 
         isDead = true;

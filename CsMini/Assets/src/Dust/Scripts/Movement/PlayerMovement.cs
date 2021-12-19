@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    #region
+    public static GameObject instance;
+
+    private void Awake()
+    {
+        instance = this.gameObject;
+    }
+    #endregion
 
     public CharacterController controller;
 

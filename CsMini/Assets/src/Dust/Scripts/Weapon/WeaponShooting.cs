@@ -17,6 +17,7 @@ public class WeaponShooting : MonoBehaviour
 
     [SerializeField] private bool primaryMagazineIsEmpty = false;
     [SerializeField] private bool secondaryMagazineIsEmpty = false;
+    [SerializeField] private GameObject bloodPS = null;
     public bool canReload = true;
 
     private Camera cam;
@@ -55,7 +56,13 @@ public class WeaponShooting : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, currentWeaponRange))
         {
-            //Debug.Log(hit.transform.name);
+            if (hit.transform.tag == "Enemy")
+            {
+                BotState enemyState = hit.transform.GetComponent<BotState>();
+                enemyState.takeDamage(currentWeapon.damage);
+
+                spawnBloodParticles(hit.point, hit.normal);
+            }
         }
 
         if (currentWeapon.weaponStyle != WeaponStyle.Melee)
@@ -189,6 +196,11 @@ public class WeaponShooting : MonoBehaviour
         }
 
         playerHUD.updateAmmoUI(tmp1, tmp2);
+    }
+
+    private void spawnBloodParticles(Vector3 position, Vector3 normal)
+    {
+        Instantiate(bloodPS, position, Quaternion.FromToRotation(Vector3.up, normal));
     }
 
     private void getReferences()
