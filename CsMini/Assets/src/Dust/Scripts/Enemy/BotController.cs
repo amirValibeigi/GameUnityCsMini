@@ -7,7 +7,7 @@ public class BotController : MonoBehaviour
 {
     private NavMeshAgent agent = null;
     private Animator animator;
-    [SerializeField] private Transform target;
+    private Transform target;
 
     private void Start()
     {
@@ -37,6 +37,8 @@ public class BotController : MonoBehaviour
     {
         Vector3 direction = target.position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
+        rotation.x = 0;
+        rotation.z = 0;
         transform.rotation = rotation;
     }
 
@@ -44,6 +46,7 @@ public class BotController : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
+        target = PlayerMovement.instance.transform;
     }
 
 }

@@ -17,6 +17,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 691568319e3a06144a455b275b8fe64c, type: 3}
   prefab: {fileID: 235693083089799521, guid: 5cf6fd9c4f1fc314e9baa90fa4985920, type: 3}
   muzzleFlashParticles: {fileID: 9046875552087325844, guid: d63896f74a8592448a92671a0add583c, type: 3}
+  damage: 20
   magazineSize: 30
   storedAmmo: 120
   range: 75
