@@ -3,6 +3,9 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - AnimationEventManager
     - AttackButton
+    - BotController
+    - BotState
+    - EnemySpawner
     - EquipmentManager
     - FixedJoystick
     - Inventory
@@ -25,10 +28,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -89,62 +90,72 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1668}
     - Class: 114
-      Script: {instanceID: 1944}
+      Script: {instanceID: 1898}
     - Class: 114
-      Script: {instanceID: 2018}
+      Script: {instanceID: 1946}
     - Class: 114
-      Script: {instanceID: 2094}
+      Script: {instanceID: 2020}
     - Class: 114
-      Script: {instanceID: 2386}
+      Script: {instanceID: 2096}
     - Class: 114
-      Script: {instanceID: 2498}
+      Script: {instanceID: 2144}
     - Class: 114
-      Script: {instanceID: 2532}
+      Script: {instanceID: 2390}
     - Class: 114
-      Script: {instanceID: 2664}
+      Script: {instanceID: 2502}
     - Class: 114
-      Script: {instanceID: 2850}
+      Script: {instanceID: 2510}
     - Class: 114
-      Script: {instanceID: 2878}
+      Script: {instanceID: 2538}
     - Class: 114
-      Script: {instanceID: 2926}
+      Script: {instanceID: 2600}
     - Class: 114
-      Script: {instanceID: 2938}
+      Script: {instanceID: 2672}
     - Class: 114
-      Script: {instanceID: 3036}
+      Script: {instanceID: 2730}
     - Class: 114
-      Script: {instanceID: 3292}
+      Script: {instanceID: 2860}
     - Class: 114
-      Script: {instanceID: 3348}
+      Script: {instanceID: 2888}
     - Class: 114
-      Script: {instanceID: 3366}
+      Script: {instanceID: 2936}
     - Class: 114
-      Script: {instanceID: 3598}
+      Script: {instanceID: 2948}
     - Class: 114
-      Script: {instanceID: 3824}
+      Script: {instanceID: 3046}
     - Class: 114
-      Script: {instanceID: 4000}
+      Script: {instanceID: 3268}
     - Class: 114
-      Script: {instanceID: 4466}
+      Script: {instanceID: 3304}
     - Class: 114
-      Script: {instanceID: 50908}
+      Script: {instanceID: 3360}
     - Class: 114
-      Script: {instanceID: 50910}
+      Script: {instanceID: 3378}
     - Class: 114
-      Script: {instanceID: 50912}
+      Script: {instanceID: 3428}
     - Class: 114
-      Script: {instanceID: 50918}
+      Script: {instanceID: 3612}
     - Class: 114
-      Script: {instanceID: 92466}
+      Script: {instanceID: 3838}
+    - Class: 114
+      Script: {instanceID: 4014}
+    - Class: 114
+      Script: {instanceID: 4060}
+    - Class: 114
+      Script: {instanceID: 4482}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 136
       Script: {instanceID: 0}
     - Class: 137
       Script: {instanceID: 0}
     - Class: 143
       Script: {instanceID: 0}
     - Class: 157
+      Script: {instanceID: 0}
+    - Class: 195
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
@@ -159,6 +170,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 238
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -253,6 +266,12 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
+      Hash: 400574be6b0c3414a9912341827de045
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PickupButton
+  - hash:
+      serializedVersion: 2
       Hash: 85b68eba4538e50f9f9d7065a66295e0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -295,6 +314,12 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
+      Hash: 02b8a1b18a1efcc4933b443c2dd81606
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BotState
+  - hash:
+      serializedVersion: 2
       Hash: f1d735cc1a21c3704ab52568f4fbfcf8
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner
@@ -323,6 +348,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: EventSystem
+  - hash:
+      serializedVersion: 2
+      Hash: d1721d4ff03862128874f82f0d48b70f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TimerGame
   - hash:
       serializedVersion: 2
       Hash: fe64a45214940b510a0ec79c96d43498
@@ -355,6 +386,12 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
+      Hash: 400574be6b0c3414a9912341827de045
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ReloadButton
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestRunner.Utils
@@ -383,6 +420,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SpriteAnimator
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BotController
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -499,6 +542,12 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
+      Hash: 6ffd96f0d72c5003a693f8542a6c4252
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemySpawner
+  - hash:
+      serializedVersion: 2
       Hash: 67e6dfc1b0fc3835b347cd7e9bcad4fb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -541,7 +590,7 @@ ScriptsOnlyBuild:
     className: PositionAsUV1
   - hash:
       serializedVersion: 2
-      Hash: 2023c7f8ca3d376fd2afe7d819a65645
+      Hash: f5e221b7ca2b7fc851f599b353188f90
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Weapon
@@ -551,6 +600,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AudioPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 400574be6b0c3414a9912341827de045
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AttackButton
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -667,7 +722,7 @@ ScriptsOnlyBuild:
     className: JoystickPlayerExample
   - hash:
       serializedVersion: 2
-      Hash: 213150b0752305e09d5de0408269ae6e
+      Hash: 690a8847a41a0f09f1ae29763ac9995e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: WeaponShooting
@@ -677,6 +732,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: JoyButton
+  - hash:
+      serializedVersion: 2
+      Hash: 400574be6b0c3414a9912341827de045
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: JumpButton
   - hash:
       serializedVersion: 2
       Hash: 6980e81ddc615a861309d2d659cc3760
@@ -731,36 +792,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
-  - hash:
-      serializedVersion: 2
-      Hash: 400574be6b0c3414a9912341827de045
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: AttackButton
-  - hash:
-      serializedVersion: 2
-      Hash: 400574be6b0c3414a9912341827de045
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PickupButton
-  - hash:
-      serializedVersion: 2
-      Hash: 400574be6b0c3414a9912341827de045
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: JumpButton
-  - hash:
-      serializedVersion: 2
-      Hash: 400574be6b0c3414a9912341827de045
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ReloadButton
-  - hash:
-      serializedVersion: 2
-      Hash: d1721d4ff03862128874f82f0d48b70f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: TimerGame
   platform: 13
   scenePathNames:
   - Assets/Scenes/DustIIScenes.unity

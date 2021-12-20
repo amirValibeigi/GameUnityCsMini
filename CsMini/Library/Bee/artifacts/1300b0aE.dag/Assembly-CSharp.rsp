@@ -340,6 +340,7 @@
 "Assets/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs"
 "Assets/src/Dust/Scripts/AnimationEventManager.cs"
 "Assets/src/Dust/Scripts/Enemy/BotController.cs"
+"Assets/src/Dust/Scripts/Enemy/EnemyCamp.cs"
 "Assets/src/Dust/Scripts/Enemy/EnemySpawner.cs"
 "Assets/src/Dust/Scripts/Items/Item.cs"
 "Assets/src/Dust/Scripts/Items/ItemObject.cs"

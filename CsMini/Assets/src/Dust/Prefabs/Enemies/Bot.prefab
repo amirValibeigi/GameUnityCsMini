@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5602590572448523417}
   - component: {fileID: 5602590572448523416}
   - component: {fileID: 899979776949045916}
+  - component: {fileID: 7275659631163605240}
   m_Layer: 0
   m_Name: Bot
   m_TagString: Enemy
@@ -84,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2414871eba0924f81cacc390bb4645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  camps: []
 --- !u!114 &899979776949045916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,6 +101,20 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   isDead: 0
+--- !u!64 &7275659631163605240
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5602590572448523422}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1001 &5602590573459771668
 PrefabInstance:
   m_ObjectHideFlags: 0
