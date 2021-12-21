@@ -5,11 +5,14 @@ using UnityEngine.AI;
 
 public class BotController : MonoBehaviour
 {
+    [SerializeField] private float minTimeCamp = 5;
+    [SerializeField] private float maxTimeCamp = 15;
     private NavMeshAgent agent = null;
     private Animator animator;
     private Transform targetPlayer;
     private Transform targetCamp;
     private EnemyCamp enemyCamp;
+    private float nextTimeCamp = -1;
 
     private void Start()
     {
@@ -32,6 +35,7 @@ public class BotController : MonoBehaviour
         }
 
         moveToTarget(targetCamp);
+        setNextCamp();
     }
 
     private void moveToTarget(Transform target)
@@ -74,9 +78,34 @@ public class BotController : MonoBehaviour
 
     private bool isNearTarget(Transform target, float stoppingDistance)
     {
+        if (target == null)
+            return false;
+
+
         float distanceToTarget = Vector3.Distance(target.position, transform.position);
 
         return distanceToTarget <= stoppingDistance;
+    }
+
+    private void setNextCamp()
+    {
+        if (!isNextTimeCamp() || isNearTarget() || !isNearTarget(targetCamp))
+            return;
+
+
+        targetCamp = enemyCamp.getCamp();
+    }
+
+
+    public bool isNextTimeCamp()
+    {
+        if (nextTimeCamp <= Time.deltaTime)
+        {
+            nextTimeCamp = Random.Range(minTimeCamp, maxTimeCamp) + Time.deltaTime;
+            return true;
+        }
+
+        return false;
     }
 
     private void getReferences()
@@ -90,6 +119,5 @@ public class BotController : MonoBehaviour
     private void initVarables()
     {
         targetCamp = enemyCamp.getCamp();
-        Debug.Log(targetCamp.position);
     }
 }
