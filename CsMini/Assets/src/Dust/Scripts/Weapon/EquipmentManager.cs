@@ -9,6 +9,7 @@ public class EquipmentManager : MonoBehaviour
     public Transform currentWeaponBarrel = null;
     public Transform WeaponHolderR;
     [SerializeField] Weapon defaultMeleeWeapon = null;
+    [SerializeField] Weapon defaultPistolWeapon = null;
     public Animator currentWeaponAnimator;
     private Animator playerAnimator;
     private Inventory inventory;
@@ -69,6 +70,7 @@ public class EquipmentManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         inventory.addItem(defaultMeleeWeapon);
+        inventory.addItem(defaultPistolWeapon);
         unequipWeapon();
         equipWeapon(inventory.getItem(2));
     }

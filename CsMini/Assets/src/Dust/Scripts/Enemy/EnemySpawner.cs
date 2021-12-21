@@ -22,8 +22,13 @@ public class EnemySpawner : MonoBehaviour
 
     private void spawnEnemy()
     {
-        foreach (Transform enemyTrans in spawners)
+        int i = 0, maxCountBot = GlobalState.getCountBot();
+
+        for (; i < maxCountBot; i++)
         {
+
+            Transform enemyTrans = spawners[Random.Range(0, spawners.Length)];
+
             Instantiate(enemy, enemyTrans.position, enemyTrans.rotation);
         }
 

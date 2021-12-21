@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TimerGame : MonoBehaviour
 {
     [SerializeField] private Text timerText;
-    [SerializeField] private float defaultSecondsTime = 9;
+    private float defaultSecondsTime = GlobalState.getDefaultSecondsTime();
 
 
     void Start()
@@ -15,6 +15,18 @@ public class TimerGame : MonoBehaviour
     }
 
     void Update()
+    {
+        counterDown();
+
+        if (defaultSecondsTime <= 0)
+        {
+            GlobalState.pauseGame();
+        }
+    }
+
+
+
+    private void counterDown()
     {
         defaultSecondsTime -= Time.deltaTime;
 
