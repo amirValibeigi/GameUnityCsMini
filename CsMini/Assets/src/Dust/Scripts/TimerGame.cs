@@ -18,9 +18,9 @@ public class TimerGame : MonoBehaviour
     {
         counterDown();
 
-        if (defaultSecondsTime <= 0)
+        if (defaultSecondsTime <= 1)
         {
-            GlobalState.pauseGame();
+            GlobalState.restartGame();
         }
     }
 

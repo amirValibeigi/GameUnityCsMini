@@ -7,30 +7,56 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Transform[] spawners;
     [SerializeField] private GameObject enemy;
 
+    private int maxCountBot = GlobalState.getCountBot();
+    private GameObject[] bots;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        initVarables();
         spawnEnemy();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (isAllBotDie())
+        {
+            GlobalState.restartGame();
+            return;
+        }
     }
 
     private void spawnEnemy()
     {
-        int i = 0, maxCountBot = GlobalState.getCountBot();
-
-        for (; i < maxCountBot; i++)
+        for (int i = 0; i < maxCountBot; i++)
         {
-
             Transform enemyTrans = spawners[Random.Range(0, spawners.Length)];
 
-            Instantiate(enemy, enemyTrans.position, enemyTrans.rotation);
+            bots[i] = Instantiate(enemy, enemyTrans.position, enemyTrans.rotation);
+
+            BotState botState = bots[i].GetComponent<BotState>();
+
+            botState.setPlayerName(GlobalState.getNamesBot()[Random.Range(0, 29)]);
         }
 
+    }
+
+
+    private bool isAllBotDie()
+    {
+        for (int i = 0; i < maxCountBot; i++)
+        {
+            if (bots[i] != null)
+                return false;
+        }
+
+        return true;
+    }
+
+    private void initVarables()
+    {
+        bots = new GameObject[maxCountBot];
     }
 }

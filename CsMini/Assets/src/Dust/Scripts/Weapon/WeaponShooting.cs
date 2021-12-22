@@ -25,6 +25,7 @@ public class WeaponShooting : MonoBehaviour
     private EquipmentManager manager;
     private Animator playerAnimator;
     private PlayerHUD playerHUD;
+    private PlayerState playerState;
     private AttackButton attackButton;
     private ReloadButton reloadButton;
 
@@ -62,6 +63,11 @@ public class WeaponShooting : MonoBehaviour
                 enemyState.takeDamage(currentWeapon.damage);
 
                 spawnBloodParticles(hit.point, hit.normal);
+
+                if (enemyState.isDie())
+                {
+                    playerHUD.updateKill(playerState.getPlayerName(), enemyState.getPlayerName());
+                }
             }
         }
 
@@ -212,5 +218,6 @@ public class WeaponShooting : MonoBehaviour
         playerHUD = GetComponent<PlayerHUD>();
         attackButton = FindObjectOfType<AttackButton>();
         reloadButton = FindObjectOfType<ReloadButton>();
+        playerState = FindObjectOfType<PlayerState>();
     }
 }
