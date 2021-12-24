@@ -58,3 +58,10 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+/.out/
+/[Ll]ibrary/*
+/Assets/AssetStoreTools*
+/UWP/
+/ExportedObj/
+**/sysinfo.txt
+!/[Ll]ibrary/*.asset
