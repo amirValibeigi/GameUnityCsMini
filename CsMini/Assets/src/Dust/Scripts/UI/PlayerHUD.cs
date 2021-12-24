@@ -18,7 +18,7 @@ public class PlayerHUD : MonoBehaviour
 
     public void Update()
     {
-        if (removeTextNameKill <= Time.deltaTime && txNameKill.text.Length != 0)
+        if (removeTextNameKill <= Time.time && txNameKill.text.Length > 0)
         {
             txNameKill.text = "";
         }
@@ -44,6 +44,6 @@ public class PlayerHUD : MonoBehaviour
     public void updateKill(string name, string killed)
     {
         txNameKill.text = killed + " killed by " + name;
-        removeTextNameKill = Time.deltaTime + 2;
+        removeTextNameKill = Time.time + 2;
     }
 }

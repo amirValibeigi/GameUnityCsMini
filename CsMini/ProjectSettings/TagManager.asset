@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Bot.WeaponHolder.R
   layers:
   - Default
   - TransparentFX

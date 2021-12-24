@@ -9,6 +9,7 @@ public class EnemySpawner : MonoBehaviour
 
     private int maxCountBot = GlobalState.getCountBot();
     private GameObject[] bots;
+    private float lastCheck = 0f;
 
 
     // Start is called before the first frame update
@@ -21,7 +22,7 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isAllBotDie())
+        if (lastCheck <= Time.time && isAllBotDie())
         {
             GlobalState.restartGame();
             return;
@@ -46,6 +47,8 @@ public class EnemySpawner : MonoBehaviour
 
     private bool isAllBotDie()
     {
+        lastCheck = Time.time + 2;
+
         for (int i = 0; i < maxCountBot; i++)
         {
             if (bots[i] != null)

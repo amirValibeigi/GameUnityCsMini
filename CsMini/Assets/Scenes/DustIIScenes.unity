@@ -869,7 +869,7 @@ MonoBehaviour:
   - {fileID: 1947808251}
   - {fileID: 800155357}
   - {fileID: 36435294}
-  enemy: {fileID: 5602590572448523422, guid: 8f28e2db1ad2d6c43af6917829405987, type: 3}
+  enemy: {fileID: 8866733683997451379, guid: 8f28e2db1ad2d6c43af6917829405987, type: 3}
 --- !u!1 &485098314
 GameObject:
   m_ObjectHideFlags: 0
@@ -4304,7 +4304,7 @@ GameObject:
   - component: {fileID: 1571300716}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
