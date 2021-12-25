@@ -17,10 +17,12 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: a9af22e566d11124d9c1195a63579f28, type: 3}
   prefab: {fileID: 8475882375389624835, guid: 9a5ed731921f928488a3a27d64e4409b, type: 3}
   muzzleFlashParticles: {fileID: 0}
+  FireClip: {fileID: 8300000, guid: d4fa9720b10c4de43843f1667c527fbd, type: 3}
+  ReloadClip: {fileID: 0}
   damage: 35
   magazineSize: 0
   storedAmmo: 0
-  range: 5
+  range: 2
   fireRate: 1
   weaponType: 0
   weaponStyle: 2

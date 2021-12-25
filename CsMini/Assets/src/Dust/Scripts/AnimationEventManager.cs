@@ -8,6 +8,7 @@ public class AnimationEventManager : MonoBehaviour
     private EquipmentManager equipmentManager;
     private Inventory inventory;
     private WeaponShooting weaponShooting;
+    private AudioSource audioSource;
 
 
     private void Start()
@@ -32,12 +33,25 @@ public class AnimationEventManager : MonoBehaviour
         equipmentManager.currentWeaponBarrel = equipmentManager.currentWeaponObject.transform.GetChild(0);
 
         equipmentManager.currentWeaponAnimator = equipmentManager.currentWeaponObject.GetComponent<Animator>();
+        weaponShooting.setAudioClipFire(weapon.FireClip);
+    }
+
+    public void weaponPreload()
+    {
+        weaponShooting.weaponLoaded = false;
+    }
+
+    public void weaponLoaded()
+    {
+        weaponShooting.weaponLoaded = true;
     }
 
 
     public void startReload()
     {
         weaponShooting.canReload = false;
+        Weapon weapon = inventory.getItem(equipmentManager.currentlyEquippedWeapon);
+        audioSource.PlayOneShot(weapon.ReloadClip, 0.4f);
     }
 
     public void endReload()
@@ -50,5 +64,6 @@ public class AnimationEventManager : MonoBehaviour
         inventory = GetComponentInParent<Inventory>();
         equipmentManager = GetComponentInParent<EquipmentManager>();
         weaponShooting = GetComponentInParent<WeaponShooting>();
+        audioSource = GetComponentInParent<AudioSource>();
     }
 }

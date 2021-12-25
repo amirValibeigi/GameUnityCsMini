@@ -6,8 +6,13 @@ using UnityEngine;
 public class Weapon : Item
 {
 
+    [Header("3D")]
     public GameObject prefab;
     public GameObject muzzleFlashParticles;
+    public AudioClip FireClip;
+    public AudioClip ReloadClip;
+
+    [Header("Property")]
     public int damage;
     public int magazineSize;
     public int storedAmmo;

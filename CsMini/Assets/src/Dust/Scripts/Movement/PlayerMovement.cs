@@ -37,8 +37,12 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
 
 
-    Vector3 velocity;
-    Vector3 move;
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip audioClipFootSteps;
+    private Vector3 velocity;
+    private Vector3 move;
+    private AudioSource audioFootSteps;
 
 
 
@@ -60,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
         joystick = FindObjectOfType<Joystick>();
         jumpButton = FindObjectOfType<JumpButton>();
         animator = GetComponentInChildren<Animator>();
+        audioFootSteps = GetComponent<AudioSource>();
     }
 
 
@@ -105,6 +110,11 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+        if (isGrounded && (x + z) != 0f && !audioFootSteps.isPlaying)
+        {
+            audioFootSteps.PlayOneShot(audioClipFootSteps, 0.4f);
+        }
     }
 
 

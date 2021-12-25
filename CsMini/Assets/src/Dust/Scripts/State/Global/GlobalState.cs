@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GlobalState
 {
     private static int countBot = 5;
     private static float defaultSecondsTime = 540;
-
+    private static string[] nameBots = {
+        "James","Mary","Robert","Patricia","John","Jennifer",
+        "Michael","Linda","William","Elizabeth","David","Barbara",
+        "Richard","Susan","Joseph","Jessica","Thomas","Sarah","Charles",
+        "Karen","Christopher","Nancy","Daniel","Lisa","Matthew","Betty",
+        "Anthony","Margaret","Mark","Sandra"
+};
 
 
     public static int getCountBot()
@@ -19,6 +26,10 @@ public class GlobalState
         countBot = count;
     }
 
+    public static string[] getNamesBot()
+    {
+        return nameBots;
+    }
 
     public static float getDefaultSecondsTime()
     {
@@ -40,4 +51,8 @@ public class GlobalState
         return Time.timeScale == 1;
     }
 
+    public static void restartGame()
+    {
+        SceneManager.LoadScene("DustIIScenes");
+    }
 }

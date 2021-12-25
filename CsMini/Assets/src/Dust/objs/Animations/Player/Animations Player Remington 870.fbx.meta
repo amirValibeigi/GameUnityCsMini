@@ -79,6 +79,13 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.012605042
+        functionName: weaponPreload
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 14c59cc3f0e64c345ad8ea513da2bbdc, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -184,6 +191,13 @@ ModelImporter:
         functionName: instantiateWeapon
         data: 
         objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.9453781
+        functionName: weaponLoaded
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 14c59cc3f0e64c345ad8ea513da2bbdc, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

@@ -46,7 +46,7 @@ public class MouseLock : MonoBehaviour
 
 
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -60f, 40f);
+        xRotation = Mathf.Clamp(xRotation, -80f, 70f);
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerArms.localRotation = Quaternion.Euler(xRotation, 0f, 0f);

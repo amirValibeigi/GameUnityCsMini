@@ -3,7 +3,7 @@
     package="ir.RH.CsDustIIMini"
     android:installLocation="preferExternal"
     android:versionCode="1"
-    android:versionName="1.0.1" >
+    android:versionName="1.1.0" >
 
     <uses-sdk
         android:minSdkVersion="22"

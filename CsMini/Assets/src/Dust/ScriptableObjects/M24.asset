@@ -17,10 +17,12 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 780fd85ddaba5f047b3f65760fcb19f9, type: 3}
   prefab: {fileID: 7802713104321392250, guid: 494c34fa45d17d944b386144e9f955e1, type: 3}
   muzzleFlashParticles: {fileID: 6556192950758451288, guid: 6d4fc97c5bd1bd440806471181384fcc, type: 3}
+  FireClip: {fileID: 8300000, guid: bcc224993e1f5f040ba3a4b5c23bf3f5, type: 3}
+  ReloadClip: {fileID: 8300000, guid: 1bf0e3a00bfdbf449a8497702e212151, type: 3}
   damage: 60
   magazineSize: 6
   storedAmmo: 36
-  range: 100
+  range: 40
   fireRate: 0.75
   weaponType: 4
   weaponStyle: 0

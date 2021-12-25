@@ -11,7 +11,7 @@ public class PlayerState : CharacterStats
     {
         getReferences();
         initVariable();
-
+        initVariableLocal();
     }
     private void getReferences()
     {
@@ -26,8 +26,8 @@ public class PlayerState : CharacterStats
         hud.updateHealth(health);
     }
 
-    private void Update()
+    private void initVariableLocal()
     {
-
+        setPlayerName(PlayerPrefs.GetString("namePlayer", "AmIr"));
     }
 }

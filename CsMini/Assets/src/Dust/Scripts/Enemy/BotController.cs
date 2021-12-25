@@ -5,8 +5,13 @@ using UnityEngine.AI;
 
 public class BotController : MonoBehaviour
 {
-    [SerializeField] private float minTimeCamp = 5;
-    [SerializeField] private float maxTimeCamp = 15;
+    [Header("Property")]
+    [SerializeField] private float minTimeCamp = 5f;
+    [SerializeField] private float maxTimeCamp = 15f;
+
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip audioClipFootSteps;
     private NavMeshAgent agent = null;
     private Animator animator;
     private Transform targetPlayer;
@@ -14,13 +19,16 @@ public class BotController : MonoBehaviour
     private EnemyCamp enemyCamp;
     private float nextTimeCamp = -1;
 
+    private BotWeaponShooting botWeaponShooting;
+    private AudioSource audioSourceFootSteps;
+
     private void Start()
     {
         getReferences();
         initVarables();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         moveToRandomCamp();
     }
@@ -31,6 +39,7 @@ public class BotController : MonoBehaviour
         if (isNearTarget(5f))
         {
             moveToTarget(targetPlayer);
+            botWeaponShooting.shoot();
             return;
         }
 
@@ -48,6 +57,11 @@ public class BotController : MonoBehaviour
         if (isNearTarget(target))
         {
             animator.SetFloat("Speed", 0f);
+            return;
+        }
+        if (!audioSourceFootSteps.isPlaying)
+        {
+            audioSourceFootSteps.PlayOneShot(audioClipFootSteps, 0.5f);
         }
     }
 
@@ -61,22 +75,22 @@ public class BotController : MonoBehaviour
     }
 
 
-    private bool isNearTarget()
+    public bool isNearTarget()
     {
         return isNearTarget(targetPlayer, agent.stoppingDistance);
     }
 
-    private bool isNearTarget(float stoppingDistance)
+    public bool isNearTarget(float stoppingDistance)
     {
         return isNearTarget(targetPlayer, stoppingDistance);
     }
 
-    private bool isNearTarget(Transform target)
+    public bool isNearTarget(Transform target)
     {
         return isNearTarget(target, agent.stoppingDistance);
     }
 
-    private bool isNearTarget(Transform target, float stoppingDistance)
+    public bool isNearTarget(Transform target, float stoppingDistance)
     {
         if (target == null)
             return false;
@@ -89,23 +103,24 @@ public class BotController : MonoBehaviour
 
     private void setNextCamp()
     {
-        if (!isNextTimeCamp() || isNearTarget() || !isNearTarget(targetCamp))
+        if (isNearTarget() || !isNearTarget(targetCamp) || !isNextTimeCamp())
             return;
 
-
+        nextTimeCamp = -1;
         targetCamp = enemyCamp.getCamp();
     }
 
 
     public bool isNextTimeCamp()
     {
-        if (nextTimeCamp <= Time.deltaTime)
+        if (nextTimeCamp == -1)
         {
-            nextTimeCamp = Random.Range(minTimeCamp, maxTimeCamp) + Time.deltaTime;
-            return true;
+            nextTimeCamp = Time.time + Random.Range(minTimeCamp, maxTimeCamp);
+
+            return false;
         }
 
-        return false;
+        return nextTimeCamp <= Time.time;
     }
 
     private void getReferences()
@@ -114,6 +129,8 @@ public class BotController : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         targetPlayer = PlayerMovement.instance.transform;
         enemyCamp = FindObjectOfType<EnemyCamp>();
+        botWeaponShooting = GetComponent<BotWeaponShooting>();
+        audioSourceFootSteps = GetComponent<AudioSource>();
     }
 
     private void initVarables()

@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
-    [SerializeField] protected int health;
     [SerializeField] protected int maxHealth;
+    protected int health;
 
-    [SerializeField] protected bool isDead;
+    protected bool isDead;
+    protected string namePlayer;
 
 
     private void Start()
@@ -36,6 +37,11 @@ public class CharacterStats : MonoBehaviour
         isDead = true;
     }
 
+    public bool isDie()
+    {
+        return isDead;
+    }
+
 
     private void setHealthTo(int healthToSetTo)
     {
@@ -53,6 +59,16 @@ public class CharacterStats : MonoBehaviour
     {
         int healthAfterHeal = health + heal;
         setHealthTo(healthAfterHeal);
+    }
+
+    public void setPlayerName(string name)
+    {
+        namePlayer = name;
+    }
+
+    public string getPlayerName()
+    {
+        return namePlayer;
     }
 
     public void initVariable()
