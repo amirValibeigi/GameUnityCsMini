@@ -5,8 +5,13 @@ using UnityEngine.AI;
 
 public class BotController : MonoBehaviour
 {
+    [Header("Property")]
     [SerializeField] private float minTimeCamp = 5f;
     [SerializeField] private float maxTimeCamp = 15f;
+
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip audioClipFootSteps;
     private NavMeshAgent agent = null;
     private Animator animator;
     private Transform targetPlayer;
@@ -15,6 +20,7 @@ public class BotController : MonoBehaviour
     private float nextTimeCamp = -1;
 
     private BotWeaponShooting botWeaponShooting;
+    private AudioSource audioSourceFootSteps;
 
     private void Start()
     {
@@ -51,6 +57,11 @@ public class BotController : MonoBehaviour
         if (isNearTarget(target))
         {
             animator.SetFloat("Speed", 0f);
+            return;
+        }
+        if (!audioSourceFootSteps.isPlaying)
+        {
+            audioSourceFootSteps.PlayOneShot(audioClipFootSteps, 0.5f);
         }
     }
 
@@ -119,6 +130,7 @@ public class BotController : MonoBehaviour
         targetPlayer = PlayerMovement.instance.transform;
         enemyCamp = FindObjectOfType<EnemyCamp>();
         botWeaponShooting = GetComponent<BotWeaponShooting>();
+        audioSourceFootSteps = GetComponent<AudioSource>();
     }
 
     private void initVarables()

@@ -7,7 +7,7 @@ public class WeaponShooting : MonoBehaviour
 
     private float lastShootTime = 0;
 
-    [SerializeField] private bool canShoot = true;
+    public bool weaponLoaded = false;
 
     [SerializeField] private int primaryCurrentAmmo;
     [SerializeField] private int primaryCurrentAmmoStorage;
@@ -28,6 +28,8 @@ public class WeaponShooting : MonoBehaviour
     private PlayerState playerState;
     private AttackButton attackButton;
     private ReloadButton reloadButton;
+    private AudioSource audioSourceFire;
+    private AudioClip audioClipFire;
 
     private void Start()
     {
@@ -84,8 +86,7 @@ public class WeaponShooting : MonoBehaviour
 
         int slot = (int)currentWeapon.weaponStyle;
 
-        canShoot = !((slot == 0 && primaryMagazineIsEmpty) || (slot == 1 && secondaryMagazineIsEmpty));
-
+        bool canShoot = weaponLoaded && (!((slot == 0 && primaryMagazineIsEmpty) || (slot == 1 && secondaryMagazineIsEmpty)));
 
         if (canShoot && canReload)
         {
@@ -96,6 +97,15 @@ public class WeaponShooting : MonoBehaviour
                 lastShootTime = Time.time;
                 RaycastShoot(currentWeapon);
                 useAmmo(slot, 1, 0);
+
+                ///audio not set or weapon without sound
+                if (audioClipFire == null)
+                    return;
+
+                if (audioSourceFire.isPlaying)
+                    audioSourceFire.Stop();
+
+                audioSourceFire.PlayOneShot(audioClipFire, 0.6f);
             }
         }
 
@@ -209,6 +219,11 @@ public class WeaponShooting : MonoBehaviour
         Instantiate(bloodPS, position, Quaternion.FromToRotation(Vector3.up, normal));
     }
 
+    public void setAudioClipFire(AudioClip audio)
+    {
+        audioClipFire = audio;
+    }
+
     private void getReferences()
     {
         cam = GetComponentInChildren<Camera>();
@@ -219,5 +234,6 @@ public class WeaponShooting : MonoBehaviour
         attackButton = FindObjectOfType<AttackButton>();
         reloadButton = FindObjectOfType<ReloadButton>();
         playerState = FindObjectOfType<PlayerState>();
+        audioSourceFire = GetComponent<AudioSource>();
     }
 }

@@ -26,6 +26,7 @@ public class BotWeaponShooting : MonoBehaviour
     private PlayerHUD playerHUD;
     private PlayerState botState;
     [SerializeField] private Transform weaponHolderR;
+    private AudioSource audioSourceFire;
 
     private void Start()
     {
@@ -82,6 +83,16 @@ public class BotWeaponShooting : MonoBehaviour
                 lastShootTime = Time.time;
                 RaycastShoot(currentWeapon);
                 useAmmo(slot, 1, 0);
+
+
+                ///audio not set or weapon without sound
+                if (currentWeapon.FireClip == null)
+                    return;
+
+                if (audioSourceFire.isPlaying)
+                    audioSourceFire.Stop();
+
+                audioSourceFire.PlayOneShot(currentWeapon.FireClip, 0.6f);
             }
         }
 
@@ -178,6 +189,7 @@ public class BotWeaponShooting : MonoBehaviour
         inventory = GetComponent<BotInventory>();
         manager = GetComponent<BotEquipmentManager>();
         playerHUD = GetComponent<PlayerHUD>();
+        audioSourceFire = GetComponent<AudioSource>();
 
         player = GameObject.FindWithTag("Player").transform;
     }
