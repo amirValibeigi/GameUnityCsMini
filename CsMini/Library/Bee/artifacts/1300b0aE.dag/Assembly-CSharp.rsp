@@ -115,6 +115,7 @@
 -define:ENABLE_TERRAIN
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
+-define:ENABLE_INPUT_SYSTEM
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
@@ -321,6 +322,7 @@
 -r:"E:/App/Unity/2021.2.0f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Gradle.dll"
 -r:"E:/App/Unity/2021.2.0f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Types.dll"
 -r:"E:/Project/Unity/CsMini/CsMini/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll"
+-r:"Library/Bee/artifacts/1300b0aE.dag/Unity.InputSystem.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.Rider.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.TextMeshPro.Editor.ref.dll"
@@ -347,7 +349,6 @@
 "Assets/src/Dust/Scripts/Items/Weapon.cs"
 "Assets/src/Dust/Scripts/MenuManager.cs"
 "Assets/src/Dust/Scripts/Movement/MouseLock.cs"
-"Assets/src/Dust/Scripts/Movement/MoveCameraHandler.cs"
 "Assets/src/Dust/Scripts/Movement/PlayerMovement.cs"
 "Assets/src/Dust/Scripts/State/Global/GlobalState.cs"
 "Assets/src/Dust/Scripts/State/Player/BotState.cs"

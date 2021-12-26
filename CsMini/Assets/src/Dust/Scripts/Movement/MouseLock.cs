@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class MouseLock : MonoBehaviour
 {
@@ -13,12 +15,10 @@ public class MouseLock : MonoBehaviour
 
     float xRotation = 0f;
 
-    MoveCameraHandler moveCameraHandler;
 
     // Start is called before the first frame update
     void Start()
     {
-        moveCameraHandler = FindObjectOfType<MoveCameraHandler>();
 
         if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
         {
@@ -29,8 +29,8 @@ public class MouseLock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float mouseX;
-        float mouseY;
+        float mouseX = 0f;
+        float mouseY = 0f;
 
         if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
         {
@@ -39,8 +39,34 @@ public class MouseLock : MonoBehaviour
         }
         else
         {
-            mouseX = moveCameraHandler.position.x * touchSensitivity * Time.deltaTime;
-            mouseY = moveCameraHandler.position.y * touchSensitivity * Time.deltaTime;
+            if (Touchscreen.current.touches.Count == 0)
+                return;
+
+            if (EventSystem.current.IsPointerOverGameObject(Touchscreen.current.touches[0].touchId.ReadValue()))
+            {
+                if (Touchscreen.current.touches.Count > 1 && Touchscreen.current.touches[1].isInProgress)
+                {
+                    if (EventSystem.current.IsPointerOverGameObject(Touchscreen.current.touches[1].touchId.ReadValue()))
+                        return;
+
+                    Vector2 touchDeltaPosition = Touchscreen.current.touches[1].delta.ReadValue();
+                    mouseX = touchDeltaPosition.x;
+                    mouseY = touchDeltaPosition.y;
+                }
+            }
+            else
+            {
+                if (Touchscreen.current.touches.Count > 0 && Touchscreen.current.touches[0].isInProgress)
+                {
+                    if (EventSystem.current.IsPointerOverGameObject(Touchscreen.current.touches[0].touchId.ReadValue()))
+                        return;
+
+                    Vector2 touchDeltaPosition = Touchscreen.current.touches[0].delta.ReadValue();
+                    mouseX = touchDeltaPosition.x;
+                    mouseY = touchDeltaPosition.y;
+                }
+
+            }
         }
 
 

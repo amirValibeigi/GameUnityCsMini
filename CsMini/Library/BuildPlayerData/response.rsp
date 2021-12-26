@@ -2,6 +2,7 @@
 -a="E:\Project\Unity\CsMini\CsMini\Library\PlayerScriptAssemblies\UnityEngine.TestRunner.dll"
 -a="E:\Project\Unity\CsMini\CsMini\Library\PlayerScriptAssemblies\Unity.Timeline.dll"
 -a="E:\Project\Unity\CsMini\CsMini\Library\PlayerScriptAssemblies\Unity.TextMeshPro.dll"
+-a="E:\Project\Unity\CsMini\CsMini\Library\PlayerScriptAssemblies\Unity.InputSystem.dll"
 -a="E:\Project\Unity\CsMini\CsMini\Library\PlayerScriptAssemblies\UnityEngine.UI.dll"
 -a="E:\Project\Unity\CsMini\CsMini\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\AOT\Newtonsoft.Json.dll"
 -a="E:\Project\Unity\CsMini\CsMini\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Portable\Newtonsoft.Json.dll"
